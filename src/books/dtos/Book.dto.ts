@@ -8,6 +8,14 @@ export class SearchBookSDI {
   @IsOptional()
   @IsString()
   description: string;
+
+  @IsOptional()
+  @IsString()
+  category: string;
+
+  @IsOptional()
+  @IsString()
+  user: string;
 }
 
 export class SelfBookSDI {
@@ -17,39 +25,45 @@ export class SelfBookSDI {
 
 export class CreateBookSDI {
   @IsString()
-  title;
+  title: string;
 
   @IsString()
-  description;
+  description: string;
 
   @IsString()
-  thumbnail;
+  thumbnail: string;
 
   @IsNumber()
-  quantity;
+  quantity: number;
 
   @IsNumber()
-  price;
+  price: number;
+
+  @IsString()
+  categoryId: string;
 }
 
 export class UpdateBookSDI {
   @IsOptional()
   @IsString()
-  title;
+  title: string;
 
   @IsOptional()
   @IsString()
-  description;
+  description: string;
 
   @IsOptional()
   @IsString()
-  thumbnail;
+  thumbnail: string;
 
   @IsOptional()
   @IsNumber()
-  quantity;
+  quantity: number;
 
   @IsOptional()
   @IsNumber()
-  price;
+  price: number;
+
+  @IsOptional()
+  categoryId: string;
 }

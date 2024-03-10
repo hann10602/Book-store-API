@@ -24,11 +24,11 @@ export class UsersController {
   @Get('search')
   @UsePipes(CreateUsersPipe)
   getAll(@Body() userSdi?: SearchUsersSDI): Promise<Users[]> {
-    return this.usersService.getAll(userSdi);
+    return this.usersService.search(userSdi);
   }
 
   @Get(':id')
-  getSelf(@Param('id') id: string): Promise<SelfUserSDO> {
+  getOne(@Param('id') id: string): Promise<SelfUserSDO> {
     return this.usersService.getOne(id);
   }
 

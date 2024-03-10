@@ -20,7 +20,7 @@ export class UsersService {
     private readonly roleService: RolesService,
   ) {}
 
-  getAll(userDto?: SearchUsersSDI) {
+  search(userDto?: SearchUsersSDI) {
     return this.userModel.find(userDto).populate(['roles']);
   }
 
