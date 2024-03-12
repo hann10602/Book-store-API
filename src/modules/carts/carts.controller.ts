@@ -6,16 +6,19 @@ import {
   Param,
   Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
+import { Carts } from 'src/schemas/Carts.schema';
+import { CheckRoleGuard } from '../auth/auth.guard';
 import { CartsService } from './carts.service';
 import { CreateCartSDI, SearchCartSDI, UpdateCartSDI } from './dtos/Cart.dto';
-import { Carts } from 'src/schemas/Carts.schema';
 
 @Controller('api/v1/carts')
 export class CartsController {
   constructor(private readonly cartsService: CartsService) {}
 
   @Get('search')
+  @UseGuards(new CheckRoleGuard(['ADMIN']))
   searchBook(@Body() cartDto: SearchCartSDI): Promise<Carts[]> {
     return this.cartsService.searchCart(cartDto);
   }

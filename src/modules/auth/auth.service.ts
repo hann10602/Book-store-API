@@ -1,5 +1,5 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { UsersService } from 'src/users/users.service';
+import { UsersService } from 'src/modules/users/users.service';
 import { LoginAndRegisterSDI, TokenPayloadSDO } from './dtos/Auth.dto';
 import { compare } from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
@@ -25,6 +25,7 @@ export class AuthService {
 
     const payload: TokenPayloadSDO = {
       username: authDto.username,
+      role: loginUser.roles.code,
     };
 
     return { access_token: await this.jwtService.signAsync(payload) };

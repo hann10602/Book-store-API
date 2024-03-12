@@ -11,4 +11,7 @@ export class LoginAndRegisterSDI {
 export class TokenPayloadSDO {
   @IsString()
   username: string;
+
+  @IsString()
+  role: string;
 }

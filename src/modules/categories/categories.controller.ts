@@ -6,7 +6,9 @@ import {
   Param,
   Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
+import { CheckRoleGuard } from '../auth/auth.guard';
 import { CategoriesService } from './categories.service';
 import {
   CreateCategoriesSDI,
@@ -29,11 +31,13 @@ export class CategoriesController {
   }
 
   @Post()
+  @UseGuards(new CheckRoleGuard(['ADMIN']))
   createCategory(@Body() categoryDto: CreateCategoriesSDI) {
     return this.categoriesService.createCategory(categoryDto);
   }
 
   @Put(':id')
+  @UseGuards(new CheckRoleGuard(['ADMIN']))
   updateCategory(
     @Param('id') id: string,
     @Body() categoryDto: UpdateCategoriesSDI,
@@ -42,6 +46,7 @@ export class CategoriesController {
   }
 
   @Delete(':id')
+  @UseGuards(new CheckRoleGuard(['ADMIN']))
   deleteCategory(@Param('id') id: string) {
     return this.categoriesService.deleteCategory(id);
   }

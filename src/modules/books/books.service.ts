@@ -1,7 +1,7 @@
 import { ConflictException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { CategoriesService } from 'src/categories/categories.service';
+import { CategoriesService } from 'src/modules/categories/categories.service';
 import { Books } from 'src/schemas/Books.schema';
 import { CreateBookSDI, SearchBookSDI, UpdateBookSDI } from './dtos/Book.dto';
 

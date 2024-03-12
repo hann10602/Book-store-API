@@ -4,7 +4,7 @@ import { BooksController } from './books.controller';
 import { BookSchema, Books } from 'src/schemas/Books.schema';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Categories, CategorySchema } from 'src/schemas/Categories.schema';
-import { CategoriesModule } from 'src/categories/categories.module';
+import { CategoriesModule } from 'src/modules/categories/categories.module';
 
 @Module({
   imports: [

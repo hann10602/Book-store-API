@@ -5,8 +5,8 @@ import { CommentSchema, Comments } from 'src/schemas/Comments.schema';
 import { UserSchema, Users } from 'src/schemas/Users.schema';
 import { CommentsController } from './comments.controller';
 import { CommentsService } from './comments.service';
-import { BooksModule } from 'src/books/books.module';
-import { UsersModule } from 'src/users/users.module';
+import { BooksModule } from 'src/modules/books/books.module';
+import { UsersModule } from 'src/modules/users/users.module';
 
 @Module({
   imports: [

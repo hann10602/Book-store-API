@@ -2,8 +2,8 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { compare, hash } from 'bcrypt';
 import { Model } from 'mongoose';
-import { salt } from 'src/auth/constants/Auth.const';
-import { RolesService } from 'src/roles/roles.service';
+import { salt } from 'src/modules/auth/constants/Auth.const';
+import { RolesService } from 'src/modules/roles/roles.service';
 import { Users } from 'src/schemas/Users.schema';
 import {
   CreateUserSDI,
